@@ -19,6 +19,7 @@ $mq-breakpoints: (
     wide:            1300px
 );
 
+
 @font-face {
     font-family: "GuardianTitlepiece";
     src: url("https://interactive.guim.co.uk/fonts/garnett/GTGuardianTitlepiece-Bold.woff2") format("woff2"), url("https://interactive.guim.co.uk/fonts/garnett/GTGuardianTitlepiece-Bold.woff") format("woff"), url("https://interactive.guim.co.uk/fonts/garnett/GTGuardianTitlepiece-Bold.ttf") format("truetype");
@@ -32,7 +33,7 @@ $primaryColor:#00B2FF;
 $secondaryColor:#005689;
 
 
-section#football-100-2019 {
+section#football100-2019 {
     position: relative;
     padding: 0 !important;
     overflow: hidden;
@@ -53,16 +54,19 @@ section#football-100-2019 {
 .football100-2019__wrapper {
     background-color:$backgroundColor;
     width:100%;
-    height:300px;
-    @include mc(mobileLandscape){
-        height:150px;
-    }
-    @include mc(phablet){
-        height:180px;
-    }
 }
 
 .football100-2019 {
+    overflow:hidden;
+    position: relative;
+    width:100%;
+    height: 285px;
+    @include mq(mobileLandscape){
+        height:150px;
+    }
+    @include mq(phablet){
+        height:180px;
+    }
     background-color:$backgroundColor;
     color:#fff;
     font-variant-numeric: lining-nums;
@@ -72,14 +76,16 @@ section#football-100-2019 {
         font-size:42px;
         line-height:115%;
         margin-left:10px;
-        @include mc (mobileMedium) {
+        margin-top:0;
+        margin-bottom:0;
+        @include mq(mobileMedium) {
             font-size:50px;
         }
-        @include mc(mobileLandscape){
+        @include mq(mobileLandscape){
             font-size:40px;
             margin-left:20px;
         }
-        @include mc (phablet){
+        @include mq(phablet){
             font-size:50px;
             margin-left:20px;
         }
@@ -93,120 +99,123 @@ section#football-100-2019 {
         margin-left:10px;
         margin-top:4px;
         width: 240px;
-        @include mc (mobileMedium){
+        @include mq(mobileMedium){
             width:300px;
-            margin-top:8px;
         }
-        @include mc(mobileLandscape){
+        @include mq(mobileLandscape){
             width:230px;
             margin-left:20px;
         }
-        @include mc(phablet){
+        @include mq(phablet){
             width:300px;
         }
-        @include mc(desktop){
+        @include mq(desktop){
             margin-top:4px;
             font-size:22px;
         }
     }
 
     &__image {
+        z-index:3;
         width: auto;
         height: 115px;
         position: absolute;
         right: -19px;
         bottom: 0;
-        @include mc(mobileMedium) {
+        @include mq(mobileMedium) {
             height: 125px;
             bottom:-10px;
         }
-        @include mc(mobileLandscape){
+        @include mq(mobileLandscape){
             height: 80px;
             bottom: 0;
+            right:-10px;
         }
-        @include mc(phablet){
+        @include mq(phablet){
             height: 120px;
             bottom: 0px;
+            right:-19px;
         }
-        @include mc(tablet){
+        @include mq(tablet){
             height: 145px;
             bottom: 0px;
             right:-6px;
         }
-        @include mc(desktop){
+        @include mq(desktop){
             height: 160px;
             right: 90px;
         }
-        @include mc(leftCol){
+        @include mq(leftCol){
             right:330px;
             bottom: -8px;
         }
-        @include mc(wide){
+        @include mq(wide){
             right:400px;
         }
     }
 
     &__100text {
+        bottom: 60px;
+        right:0;
+        z-index:2;
+        position:absolute;
         font-family:"GuardianTitlepiece","Guardian Egyptian Web",Georgia,serif;
         color:$primaryColor;
         font-size:160px;
-        margin-top: 54px;
-        margin-right: 8px;
         text-align: right;
-        @include mc(mobileMedium) {
-            margin-top:60px;
-            font-size:180px;
+        @include mq(mobileMedium) {
+            font-size: 170px;
+            bottom: 51px;
+            right:10px;
         }
-        @include mc(mobileLandscape){
-            margin-right:-17px;
-            font-size: 130px;
-            margin-top: -70px;
+        @include mq(mobileLandscape){
+            font-size: 120px;
+            bottom:52px;
+            right:3px;
         }
-        @include mc(phablet){
+        @include mq(phablet){
             font-size: 178px;
-            margin-top:-80px;
+            bottom: 90px;
+            right:0;
         }
-        @include mc(tablet){
-            margin-top: -95px;
-            margin-right: 20px;
+        @include mq(desktop){
+            font-size:200px;
+            bottom: 88px;
+            right:110px;
         }
-        @include mc(desktop){
-            font-size:178px;
-            margin-top:-94px;
-            margin-right:190px;
-        }
-        @include mc(leftCol){
+        @include mq(leftCol){
             font-size: 200px;
-            margin-top: -93px;
-            margin-right: 325px;
+            right:340px;
         }
-        @include mc(wide){
-            font-size: 208px;
-            margin-top: -96px;
-            margin-right: 415px;
+        @include mq(wide){
+            font-size: 200px;
+            right:410px;
         }
     }
 
     &__roundel {
+        z-index:10;
         top: 4px;
         right: 10px;
         position: absolute;
 
-        @include mc(mobileMedium){
+        @include mq(mobileMedium){
             top:8px;
         }
-        @include mc(desktop){
+        @include mq(desktop){
             right:20px;
         }
     }
 
     &__component-button {
+        margin-left: 8px;
+        z-index: 3;
+        position: absolute;
+        margin-top: 10px;
         display:inline-flex;
         border-radius: 25px;
         background-color:#fff;
         padding:8px;
-        margin-left: 8px;
-        margin-top: 13px;
         text-decoration:none;
         span {
             color:$backgroundColor;
@@ -221,26 +230,35 @@ section#football-100-2019 {
             padding-left:10px;
             padding-right:10px;
         }
-        @include mc(mobileLandscape){
-            margin-top: 11px;
+        @include mq(mobileMedium){
+            margin-top:8px;
+            z-index: 3;
+        }
+        @include mq(mobileLandscape){
             margin-left:18px;
             padding:4px;
+            margin-top: 16px;
+            z-index: 3;
             span {
                 padding-left:8px;
+                padding-top:1px;
             }
             svg {
                 padding-left: 8px;
                 padding-right: 8px;
             }
         }
-        @include mc (phablet){
+        @include mq(phablet){
             margin-left:18px;
+            z-index: 3;
         }
-        @include mc(leftCol){
+        @include mq(leftCol){
             margin-left:872px;
+            z-index: 3;
         }
-        @include mc(wide){
+        @include mq(wide){
             margin-left: 1032px;
+            z-index: 3;
         }
         
     }
@@ -258,15 +276,29 @@ section#football-100-2019 {
 
 
     &__dots {
+        position: absolute;
         z-index:0;
-        @include mc(mobileLandscape){
-            margin-left:70px;
+        bottom: -80px;
+        right: -200px;
+        @include mq(mobileMedium){
+            right:-100px;
+            bottom:-30px;
         }
-        @include mc(phablet){
-            margin-left:90px;
+        @include mq(phablet){
+            right:-50px;
+            bottom:-10px;
         }
-        @include mc(tablet){
+        @include mq(tablet){
             margin-left:0;
+        }
+        @include mq(desktop){
+            right:80px;
+        }
+        @include mq(leftCol){
+            right:310px;
+        }
+        @include mq(wide){
+            right:380px;
         }
     }
     &__dot1 {
@@ -276,20 +308,8 @@ section#football-100-2019 {
         border-radius:50px;
         margin-left:380px;
         margin-top:0px;
-        @include mc(phablet){
-            margin-left: 300px;
-        }
-        @include mc(tablet){
-            margin-left:300px;
-        }
-        @include mc(desktop){
-            margin-left: 370px;
-        }
-        @include mc(leftCol){
-            margin-left: 320px;
-        }
-        @include mc(wide){
-            margin-left: 390px;
+        @include mq(tablet){
+            margin-left: 150px;
         }
 
     }
@@ -300,31 +320,21 @@ section#football-100-2019 {
         border-radius:70px;
         margin-top: -130px;
         margin-left: 10px;
-        @include mc(mobileMedium){
+        @include mq(mobileMedium){
             margin-top: -150px;
             margin-left: 10px;
         }
-        @include mc(mobileLandscape){
-            margin-top: -145px;
-            margin-left: 280px;
+        @include mq(mobileLandscape){
+            margin-left: 200px;
         }
-        @include mc(phablet){
-            margin-top: -160px;
-            margin-left: 380px;
+        @include mq(phablet){
+            margin-left: 110px;
         }
-        @include mc(tablet){
-            margin-top:-175px;
-            margin-left: 370px;
+        @include mq(tablet){
+            margin-top: -70px;
+            margin-left:20px;
         }
-        @include mc(desktop){
-            margin-left: 450px;
-        }
-        @include mc(leftCol){
-            margin-left: 420px;
-        }
-        @include mc(wide){
-            margin-left: 480px;
-        }
+        
     }
     &__dot3 {
         background-color:$secondaryColor;
@@ -333,30 +343,44 @@ section#football-100-2019 {
         border-radius: 100px;
         margin-top: -170px;
         margin-left: 140px;
-        @include mc(mobileMedium){
+        @include mq(mobileMedium){
             margin-top: -200px;
             margin-left: 230px;
         }
-        @include mc(mobileLandscape){
-            margin-top: -275px;
-            margin-left: 380px;
+        @include mq(mobileLandscape){
+            margin-left:310px;
+        }  
+    }
+}
+
+
+.interactive-atom {
+    margin:0;
+    overflow: hidden;
+}
+
+.football100-2019 {
+    .android &,
+    .ios & {
+        overflow:hidden;
+        &__heading {
+            margin-bottom:0;
         }
-        @include mc(phablet){
-            margin-top: -195px;
-            margin-left: 510px;
+        &__subheading {
+            margin-bottom:0;
         }
-        @include mc(tablet){
-            margin-top: -170px;
-            margin-left: 580px;
-        }
-        @include mc(desktop){
-            margin-left: 720px;
-        }
-        @include mc(leftCol){
-            margin-left: 650px;
-        }
-        @include mc(wide){
-            margin-left: 760px;
+        &__100text{
+            margin-bottom:0;
+            bottom:-20px;
+            @include mq(mobileMedium){
+                bottom: -35px;
+            }
+            @include mq(mobileLandscape){
+                bottom: -5px;
+            }
+            @include mq(desktop){
+                bottom:-20px;
+            }
         }
     }
 }
