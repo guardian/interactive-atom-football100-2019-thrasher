@@ -27,6 +27,15 @@ $mq-breakpoints: (
     font-style: normal;
 }
 
+@font-face {
+    font-family: "Guardian Headline Full";
+    src: url("https://interactive.guim.co.uk/fonts/garnett/GHGuardianHeadline-Regular.woff2") format("woff2"),
+    url("https://interactive.guim.co.uk/fonts/garnett/GHGuardianHeadline-Regular.woff") format("woff"),
+    url("https://interactive.guim.co.uk/fonts/garnett/GHGuardianHeadline-Regular.ttf") format("truetype");
+    font-weight: 400;
+    font-style: normal;
+}
+
 
 $backgroundColor:#121212;
 $primaryColor:#00B2FF;
@@ -61,10 +70,10 @@ section#the-100 {
     position: relative;
     width:100%;
     height: 285px;
-    @include mq(mobileLandscape){
+    @include mc(mobileLandscape){
         height:150px;
     }
-    @include mq(phablet){
+    @include mc(phablet){
         height:180px;
     }
     background-color:$backgroundColor;
@@ -78,38 +87,38 @@ section#the-100 {
         margin-left:10px;
         margin-top:0;
         margin-bottom:0;
-        @include mq(mobileMedium) {
+        @include mc(mobileMedium) {
             font-size:50px;
         }
-        @include mq(mobileLandscape){
+        @include mc(mobileLandscape){
             font-size:40px;
             margin-left:20px;
         }
-        @include mq(phablet){
+        @include mc(phablet){
             font-size:50px;
             margin-left:20px;
         }
     }
 
     &__subheading {
-        font-family: "Guardian Egyptian Web",Georgia,serif;
+        font-family: "Guardian Headline Full",Georgia,serif;
         font-size:17px;
         line-height:115%;
         font-weight:500;
         margin-left:10px;
         margin-top:4px;
         width: 240px;
-        @include mq(mobileMedium){
+        @include mc(mobileMedium){
             width:300px;
         }
-        @include mq(mobileLandscape){
+        @include mc(mobileLandscape){
             width:230px;
             margin-left:20px;
         }
-        @include mq(phablet){
+        @include mc(phablet){
             width:300px;
         }
-        @include mq(desktop){
+        @include mc(desktop){
             margin-top:4px;
             font-size:22px;
         }
@@ -122,34 +131,34 @@ section#the-100 {
         position: absolute;
         right: -19px;
         bottom: 0;
-        @include mq(mobileMedium) {
+        @include mc(mobileMedium) {
             height: 125px;
             bottom:-10px;
         }
-        @include mq(mobileLandscape){
+        @include mc(mobileLandscape){
             height: 80px;
             bottom: 0;
             right:-10px;
         }
-        @include mq(phablet){
+        @include mc(phablet){
             height: 120px;
             bottom: 0px;
             right:-19px;
         }
-        @include mq(tablet){
+        @include mc(tablet){
             height: 145px;
             bottom: 0px;
             right:-6px;
         }
-        @include mq(desktop){
+        @include mc(desktop){
             height: 160px;
             right: 90px;
         }
-        @include mq(leftCol){
+        @include mc(leftCol){
             right:330px;
             bottom: -8px;
         }
-        @include mq(wide){
+        @include mc(wide){
             right:400px;
         }
     }
@@ -163,31 +172,31 @@ section#the-100 {
         color:$primaryColor;
         font-size:160px;
         text-align: right;
-        @include mq(mobileMedium) {
+        @include mc(mobileMedium) {
             font-size: 170px;
             bottom: 51px;
             right:10px;
         }
-        @include mq(mobileLandscape){
+        @include mc(mobileLandscape){
             font-size: 120px;
             bottom:52px;
             right:3px;
         }
-        @include mq(phablet){
+        @include mc(phablet){
             font-size: 178px;
             bottom: 90px;
             right:0;
         }
-        @include mq(desktop){
+        @include mc(desktop){
             font-size:200px;
             bottom: 88px;
             right:110px;
         }
-        @include mq(leftCol){
+        @include mc(leftCol){
             font-size: 200px;
             right:340px;
         }
-        @include mq(wide){
+        @include mc(wide){
             font-size: 200px;
             right:410px;
         }
@@ -199,10 +208,10 @@ section#the-100 {
         right: 10px;
         position: absolute;
 
-        @include mq(mobileMedium){
+        @include mc(mobileMedium){
             top:8px;
         }
-        @include mq(desktop){
+        @include mc(desktop){
             right:20px;
         }
     }
@@ -230,11 +239,11 @@ section#the-100 {
             padding-left:10px;
             padding-right:10px;
         }
-        @include mq(mobileMedium){
+        @include mc(mobileMedium){
             margin-top:8px;
             z-index: 3;
         }
-        @include mq(mobileLandscape){
+        @include mc(mobileLandscape){
             margin-left:18px;
             padding:4px;
             margin-top: 16px;
@@ -248,16 +257,16 @@ section#the-100 {
                 padding-right: 8px;
             }
         }
-        @include mq(phablet){
+        @include mc(phablet){
             margin-left:18px;
             z-index: 3;
         }
-        @include mq(leftCol){
-            margin-left:872px;
+        @include mc(leftCol){
+            margin-left:886px;
             z-index: 3;
         }
-        @include mq(wide){
-            margin-left: 1032px;
+        @include mc(wide){
+            margin-left: 1046px;
             z-index: 3;
         }
         
@@ -280,24 +289,24 @@ section#the-100 {
         z-index:0;
         bottom: -80px;
         right: -200px;
-        @include mq(mobileMedium){
+        @include mc(mobileMedium){
             right:-100px;
             bottom:-30px;
         }
-        @include mq(phablet){
+        @include mc(phablet){
             right:-50px;
             bottom:-10px;
         }
-        @include mq(tablet){
+        @include mc(tablet){
             margin-left:0;
         }
-        @include mq(desktop){
+        @include mc(desktop){
             right:80px;
         }
-        @include mq(leftCol){
+        @include mc(leftCol){
             right:310px;
         }
-        @include mq(wide){
+        @include mc(wide){
             right:380px;
         }
     }
@@ -308,7 +317,7 @@ section#the-100 {
         border-radius:50px;
         margin-left:380px;
         margin-top:0px;
-        @include mq(tablet){
+        @include mc(tablet){
             margin-left: 150px;
         }
 
@@ -320,17 +329,17 @@ section#the-100 {
         border-radius:70px;
         margin-top: -130px;
         margin-left: 10px;
-        @include mq(mobileMedium){
+        @include mc(mobileMedium){
             margin-top: -150px;
             margin-left: 10px;
         }
-        @include mq(mobileLandscape){
+        @include mc(mobileLandscape){
             margin-left: 200px;
         }
-        @include mq(phablet){
+        @include mc(phablet){
             margin-left: 110px;
         }
-        @include mq(tablet){
+        @include mc(tablet){
             margin-top: -70px;
             margin-left:20px;
         }
@@ -343,11 +352,11 @@ section#the-100 {
         border-radius: 100px;
         margin-top: -170px;
         margin-left: 140px;
-        @include mq(mobileMedium){
+        @include mc(mobileMedium){
             margin-top: -200px;
             margin-left: 230px;
         }
-        @include mq(mobileLandscape){
+        @include mc(mobileLandscape){
             margin-left:310px;
         }  
     }
@@ -372,14 +381,19 @@ section#the-100 {
         &__100text{
             margin-bottom:0;
             bottom:-20px;
-            @include mq(mobileMedium){
+            @include mc(mobileMedium){
                 bottom: -35px;
             }
-            @include mq(mobileLandscape){
+            @include mc(mobileLandscape){
                 bottom: -5px;
             }
-            @include mq(desktop){
+            @include mc(desktop){
                 bottom:-20px;
+            }
+        }
+        &__component-button {
+            span {
+                margin-top:-1px;
             }
         }
     }

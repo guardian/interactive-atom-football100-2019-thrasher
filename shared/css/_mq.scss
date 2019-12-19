@@ -29,4 +29,24 @@ $mq-static-breakpoint: desktop;
 // to this list, ordered by width, e.g. (mobile, tablet, desktop).
 // $mq-show-breakpoints: (mobile, mobileLandscape, tablet, desktop, wide);
 
+
+
+// Page skin fix
+// Use mc() in place of mq() so your thrashers don't get broken
+// when a page skin ad is present
+@mixin mc($from) {
+    @if (map-get($mq-breakpoints, $from) < map-get($mq-breakpoints, leftCol)) {
+        @include mq($from) {
+            @content;
+        }
+    } @else {
+        body:not(.has-active-pageskin) & {
+            @include mq($from) {
+                @content;
+            }
+        }
+    }
+}
+
+
 @import 'node_modules/sass-mq/mq';
