@@ -393,10 +393,17 @@ section#the-100 {
         }
         &__component-button {
             span {
+                letter-spacing: normal;
+                font-weight:700;
                 margin-top:-1px;
             }
         }
     }
+    .ios & {
+        &__component-button {
+            span {
+                letter-spacing: -0.5;
+            }
+        }
+    }
 }
-
-
