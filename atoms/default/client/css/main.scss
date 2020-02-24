@@ -8,21 +8,21 @@
 //@import "fullscreen";
 
 // Default breakpoints from Frontend
-$mq-breakpoints: (
-    mobile:          320px,
-    mobileMedium:    375px,
+$mq-breakpoints: (mobile: 320px,
+    mobileMedium: 375px,
     mobileLandscape: 480px,
-    phablet:         660px,
-    tablet:          740px,
-    desktop:         980px,
-    leftCol:         1140px,
-    wide:            1300px
-);
+    phablet: 660px,
+    tablet: 740px,
+    desktop: 980px,
+    leftCol: 1140px,
+    wide: 1300px);
 
 
 @font-face {
     font-family: "GuardianTitlepiece";
-    src: url("https://interactive.guim.co.uk/fonts/garnett/GTGuardianTitlepiece-Bold.woff2") format("woff2"), url("https://interactive.guim.co.uk/fonts/garnett/GTGuardianTitlepiece-Bold.woff") format("woff"), url("https://interactive.guim.co.uk/fonts/garnett/GTGuardianTitlepiece-Bold.ttf") format("truetype");
+    src: url("https://interactive.guim.co.uk/fonts/garnett/GTGuardianTitlepiece-Bold.woff2") format("woff2"),
+        url("https://interactive.guim.co.uk/fonts/garnett/GTGuardianTitlepiece-Bold.woff") format("woff"),
+        url("https://interactive.guim.co.uk/fonts/garnett/GTGuardianTitlepiece-Bold.ttf") format("truetype");
     font-weight: 700;
     font-style: normal;
 }
@@ -30,380 +30,312 @@ $mq-breakpoints: (
 @font-face {
     font-family: "Guardian Headline Full";
     src: url("https://interactive.guim.co.uk/fonts/garnett/GHGuardianHeadline-Regular.woff2") format("woff2"),
-    url("https://interactive.guim.co.uk/fonts/garnett/GHGuardianHeadline-Regular.woff") format("woff"),
-    url("https://interactive.guim.co.uk/fonts/garnett/GHGuardianHeadline-Regular.ttf") format("truetype");
+        url("https://interactive.guim.co.uk/fonts/garnett/GHGuardianHeadline-Regular.woff") format("woff"),
+        url("https://interactive.guim.co.uk/fonts/garnett/GHGuardianHeadline-Regular.ttf") format("truetype");
     font-weight: 400;
     font-style: normal;
 }
 
 
-$backgroundColor:#121212;
-$primaryColor:#00B2FF;
-$secondaryColor:#005689;
+#secure-drop.fc-container--thrasher,
+#securedrop.fc-container--thrasher {
+    background-color: #FFF280;
 
-
-section#the-100 {
-    position: relative;
-    padding: 0 !important;
-    overflow: hidden;
-    margin-bottom: 20px;
-    background-color:#fff;
-
-    .fc-container__inner,
-    .fc-slice,
-    .facia-snap {
-        overflow: hidden;
-    }
-
-    .facia-snap {
-        padding: 0;
+    // background: #ececec;
+    // background-color: rgba(232, 237, 239, 0.5);
+    .fc-item {
+        // background: #FFFFFF;
+        background-color: #ffe500;
+        background-color: rgba(#ffe500, 0.5);
+        background-color: #FFE500;
     }
 }
 
-.football100-2019__wrapper {
-    background-color:$backgroundColor;
-    width:100%;
+#secure-drop {
+    background-color: rgba(#ffe500, 0.5);
+    padding-top: 0px;
 }
 
-.football100-2019 {
-    overflow:hidden;
+
+.secure-drop__wrapper {
+    border-top: 1px solid #E6CF00;
     position: relative;
-    width:100%;
-    height: 285px;
-    @include mc(mobileLandscape){
-        height:150px;
-    }
-    @include mc(phablet){
-        height:180px;
-    }
-    background-color:$backgroundColor;
-    color:#fff;
-    font-variant-numeric: lining-nums;
 
-    &__heading {
-        font-family: "GuardianTitlepiece","Guardian Egyptian Web",Georgia,serif;
-        font-size:42px;
-        line-height:115%;
-        margin-left:10px;
-        margin-top:0;
-        margin-bottom:0;
-        @include mc(mobileMedium) {
-            font-size:50px;
-        }
-        @include mc(mobileLandscape){
-            font-size:40px;
-            margin-left:20px;
-        }
-        @include mc(phablet){
-            font-size:50px;
-            margin-left:20px;
-        }
+    @include mc(desktop) {
+        width: 100%;
+    }
+}
+
+.securedrop {
+    background-color: #ffe500;
+    // width: 100%;
+    max-width: 620px;
+    margin: 0 auto;
+
+    @include mq(mobileLandscape) {
+        padding: 0 10px;
     }
 
-    &__subheading {
-        font-family: "Guardian Headline Full",Georgia,serif;
-        font-size:17px;
-        line-height:115%;
-        font-weight:500;
-        margin-left:10px;
-        margin-top:4px;
-        width: 240px;
-        @include mc(mobileMedium){
-            width:300px;
-        }
-        @include mc(mobileLandscape){
-            width:230px;
-            margin-left:20px;
-        }
-        @include mc(phablet){
-            width:300px;
-        }
-        @include mc(desktop){
-            margin-top:4px;
-            font-size:22px;
-        }
+    @include mc(tablet) {
+        padding: 0 20px;
+        max-width: none;
     }
 
-    &__image {
-        z-index:3;
+    @include mq(desktop) {
+        margin-left: 0px;
+    }
+
+    @include mc(leftCol) {
+        margin-left: 160px;
+    }
+
+    @include mc(wide) {
+        margin-left: 240px;
+    }
+
+    &__title {
+        font-family: "Guardian Headline Full", Georgia, serif;
+        font-weight: 700;
+        font-size: 1.5rem;
+        line-height: 1.6875rem;
+        text-decoration: none;
+        display: inline-block;
+        padding-top: 2px;
+        color: #121212;
+        float: none;
         width: auto;
-        height: 115px;
-        position: absolute;
-        right: -19px;
-        bottom: 0;
-        @include mc(mobileMedium) {
-            height: 125px;
-            bottom:-10px;
-        }
-        @include mc(mobileLandscape){
-            height: 80px;
-            bottom: 0;
-            right:-10px;
-        }
-        @include mc(phablet){
-            height: 120px;
-            bottom: 0px;
-            right:-19px;
-        }
-        @include mc(tablet){
-            height: 145px;
-            bottom: 0px;
-            right:-6px;
-        }
-        @include mc(desktop){
-            height: 160px;
-            right: 90px;
-        }
-        @include mc(leftCol){
-            right:330px;
-            bottom: -8px;
-        }
-        @include mc(wide){
-            right:400px;
-        }
-    }
+        padding-bottom: 9px;
 
-    &__100text {
-        bottom: 60px;
-        right:0;
-        z-index:2;
-        position:absolute;
-        font-family:"GuardianTitlepiece","Guardian Egyptian Web",Georgia,serif;
-        color:$primaryColor;
-        font-size:160px;
-        text-align: right;
-        @include mc(mobileMedium) {
-            font-size: 170px;
-            bottom: 51px;
-            right:10px;
+        @include mc(leftCol) {
+            padding-bottom: 0;
+            position: absolute;
+            top: 2px;
+            left: 20px;
         }
-        @include mc(mobileLandscape){
-            font-size: 120px;
-            bottom:52px;
-            right:3px;
+
+        &:after {
+            display: none;
         }
-        @include mc(phablet){
-            font-size: 178px;
-            bottom: 90px;
-            right:0;
-        }
-        @include mc(desktop){
-            font-size:200px;
-            bottom: 88px;
-            right:110px;
-        }
-        @include mc(leftCol){
-            font-size: 200px;
-            right:340px;
-        }
-        @include mc(wide){
-            font-size: 200px;
-            right:410px;
+
+        &,
+        &:hover {
+            text-decoration-skip: ink;
+            -webkit-text-decoration-skip: ink;
+            -moz-text-decoration-skip: ink;
         }
     }
 
     &__roundel {
-        z-index:10;
-        top: 4px;
-        right: 10px;
-        position: absolute;
+        float: right;
+        margin-top: 3px;
 
-        @include mc(mobileMedium){
-            top:8px;
-        }
-        @include mc(desktop){
-            right:20px;
-        }
-    }
-
-    &__component-button {
-        margin-left: 8px;
-        z-index: 3;
-        position: absolute;
-        margin-top: 10px;
-        display:inline-flex;
-        border-radius: 25px;
-        background-color:#fff;
-        padding:8px;
-        text-decoration:none;
-        span {
-            color:$backgroundColor;
-            font-family:"Guardian Text Sans Web","Helvetica Neue",Helvetica,Arial,"Lucida Grande",sans-serif;
-            font-size:17px;
-            font-weight:700;
-            margin-top:-2px;
-            padding-left: 10px;
-        }
-        svg {
-            fill:$backgroundColor;
-            padding-left:10px;
-            padding-right:10px;
-        }
-        @include mc(mobileMedium){
-            margin-top:8px;
-            z-index: 3;
-        }
-        @include mc(mobileLandscape){
-            margin-left:18px;
-            padding:4px;
-            margin-top: 16px;
-            z-index: 3;
-            span {
-                padding-left:8px;
-                padding-top:1px;
-            }
+        @include mc(tablet) {
             svg {
-                padding-left: 8px;
-                padding-right: 8px;
+                width: 32px;
+                height: 32px;
             }
         }
-        @include mc(phablet){
-            margin-left:18px;
-            z-index: 3;
-        }
-        @include mc(leftCol){
-            margin-left:886px;
-            z-index: 3;
-        }
-        @include mc(wide){
-            margin-left: 1046px;
-            z-index: 3;
-        }
-        
-    }
 
-    &__component-button:hover {
-        background-color:#ededed;
-        text-decoration:none;
-        
-        svg {
-            transform:translateX(3px);
-            transition:transform 0.1s linear;
+        @include mq(desktop) {
+            margin-right: -143px;
+        }
+
+        @include mc(leftCol) {
+            margin-right: -120px;
+        }
+
+        @include mq(wide) {
+            margin-right: -120px;
         }
     }
 
+    &__main {
+        display: block;
+        font-size: 20px;
+        line-height: 24px;
+        font-weight: 400;
+        font-family: "Guardian Headline Full", 'Guardian Egyptian Web', "Guardian Text Egyptian Web", Georgia, serif;
+        padding-top: 1px;
+        padding-bottom: 18px;
+        margin-top: -5px;
+        color: #121212;
 
-
-    &__dots {
-        position: absolute;
-        z-index:0;
-        bottom: -80px;
-        right: -200px;
-        @include mc(mobileMedium){
-            right:-100px;
-            bottom:-30px;
-        }
-        @include mc(phablet){
-            right:-50px;
-            bottom:-10px;
-        }
-        @include mc(tablet){
-            margin-left:0;
-        }
-        @include mc(desktop){
-            right:80px;
-        }
-        @include mc(leftCol){
-            right:310px;
-        }
-        @include mc(wide){
-            right:380px;
-        }
-    }
-    &__dot1 {
-        background-color:$secondaryColor;
-        width:100px;
-        height:100px;
-        border-radius:50px;
-        margin-left:380px;
-        margin-top:0px;
-        @include mc(tablet){
-            margin-left: 150px;
+        @include mc(tablet) {
+            font-weight: 200;
+            font-size: 28px;
+            line-height: 30px;
         }
 
-    }
-    &__dot2 {
-        background-color:$secondaryColor;
-        width:140px;
-        height:140px;
-        border-radius:70px;
-        margin-top: -130px;
-        margin-left: 10px;
-        @include mc(mobileMedium){
-            margin-top: -150px;
-            margin-left: 10px;
+        @include mc(wide) {
+            font-size: 32px;
+            line-height: 34px;
         }
-        @include mc(mobileLandscape){
-            margin-left: 200px;
+
+        @include mc(leftCol) {
+            margin-top: 3px;
         }
-        @include mc(phablet){
-            margin-left: 110px;
+
+        &,
+        &:hover {
+            text-decoration: none;
         }
-        @include mc(tablet){
-            margin-top: -70px;
-            margin-left:20px;
+
+        @include mc(desktop) {
+            &:hover {
+                span {
+                    border-bottom: 1px solid rgba(#121212, .5);
+                }
+            }
         }
-        
-    }
-    &__dot3 {
-        background-color:$secondaryColor;
-        width: 200px;
-        height: 200px;
-        border-radius: 100px;
-        margin-top: -170px;
-        margin-left: 140px;
-        @include mc(mobileMedium){
-            margin-top: -200px;
-            margin-left: 230px;
+
+        .eyes {
+            display: inline-block;
+            font-size: 0;
+            vertical-align: middle;
+            position: absolute;
+            top: -29px;
+            left: 136px;
+
+            @include mc(tablet) {
+                position: relative;
+                top: auto;
+                left: auto;
+            }
+
+            .target {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                width: 0x;
+                height: 18px;
+                z-index: 1;
+                transform: translate3d(-50%, -50%, 0);
+
+                &:hover+.eye .inside {
+                    top: 50% !important;
+                    left: 75% !important;
+                }
+
+                &:hover+.eye+.eye .inside {
+                    top: 50% !important;
+                    left: 25% !important;
+                }
+
+                &:hover {
+                    opacity: 0.5;
+                }
+            }
+
+            .eye {
+                display: inline-block;
+                position: relative;
+                top: 7px;
+
+                &+.eye {
+                    margin-left: 4px;
+                }
+
+                .outside {
+                    display: block;
+
+                    svg path {
+                        stroke: rgba(#E6CF00, .5);
+                        stroke-width: 1px;
+                    }
+                }
+
+                .inside {
+                    transition: all 400ms ease-in;
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate3d(-48%, -50%, 0);
+                }
+
+                svg {
+                    display: block;
+                }
+            }
         }
-        @include mc(mobileLandscape){
-            margin-left:310px;
-        }  
+
+        .cta {
+            display: inline;
+        }
+
+        .btn {
+            display: inline-block;
+            vertical-align: middle;
+            position: relative;
+            top: -1px;
+            line-height: 30px;
+            width: 26px;
+            height: 26px;
+
+            @include mc(tablet) {
+                width: 32px;
+                height: 32px;
+            }
+
+            border-radius: 100%;
+            background-color: #ffffff;
+
+            svg {
+                height: 100%;
+                width: 100%;
+                display: block;
+
+                path {
+                    fill: currentColor;
+                }
+            }
+        }
+
+        &:hover {
+            .btn {
+                background-color: #ffffff;
+                border-color: transparent;
+                // svg path {
+                //     fill: #11212;
+                // }
+            }
+        }
     }
 }
 
+// }
 
 .interactive-atom {
-    margin:0;
+    margin: 0;
     overflow: hidden;
+    // background-color: #ffe500;
 }
 
-.football100-2019 {
-    .android &,
-    .ios & {
-        overflow:hidden;
-        &__heading {
-            margin-bottom:0;
+
+.ios,
+.android {
+    .securedrop {
+        padding: 0 10px;
+
+        @include mq(phablet) {
+            // width: 100%;
+            margin: 0;
+            max-width: none;
         }
-        &__subheading {
-            margin-bottom:0;
+
+        @include mq(tablet) {
+            padding: 0 20px;
         }
-        &__100text{
-            margin-bottom:0;
-            bottom:-20px;
-            @include mc(mobileMedium){
-                bottom: -35px;
-            }
-            @include mc(mobileLandscape){
-                bottom: -5px;
-            }
-            @include mc(desktop){
-                bottom:-20px;
-            }
+
+        &__roundel {
+            margin-right: 0 !important;
         }
-        &__component-button {
-            span {
-                letter-spacing: normal;
-                font-weight:700;
-                margin-top:-1px;
-            }
+
+        &__main .eyes {
+            top: 0;
         }
     }
-    .ios & {
-        &__component-button {
-            span {
-                letter-spacing: -0.5;
-            }
-        }
+
+    .interactive-atom {
+        margin: 0;
     }
 }
